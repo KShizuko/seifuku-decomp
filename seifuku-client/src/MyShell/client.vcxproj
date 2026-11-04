@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A1B2C3D4-0005-4000-8000-000000000005}</ProjectGuid>
+    <RootNamespace>client</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Debug'">true</UseDebugLibraries>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Release'">false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\props\seifuku.props" />
+  <PropertyGroup>
+    <TargetName>Conquer</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\3DRole;$(ProjectDir)..\3DRole\Network;$(ProjectDir)..\3DGameMap;$(ProjectDir)..\3DBaseCode;$(SeifukuRoot)src\Graphic;$(SeifukuRoot)src\GraphicData;$(SeifukuRoot)src\GameData;$(SeifukuRoot)src\GameInput;$(SeifukuRoot)src\Role3D;$(SeifukuRoot)src\RoleView;$(SeifukuRoot)src\C3_CORE_DLL;$(SeifukuRoot)src\NDSound;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ENGLISH_VERSION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>netapi32.lib;$(SeifukuRoot)bin\$(Configuration)\graphic.lib;$(SeifukuRoot)bin\$(Configuration)\GraphicData.lib;$(SeifukuRoot)bin\$(Configuration)\GameData.lib;$(SeifukuRoot)bin\$(Configuration)\GameInput.lib;$(SeifukuRoot)bin\$(Configuration)\Role3D.lib;$(SeifukuRoot)bin\$(Configuration)\RoleView.lib;$(SeifukuRoot)bin\$(Configuration)\C3_CORE_DLL.lib;$(SeifukuRoot)bin\$(Configuration)\NDsound.lib;ws2_32.lib;winmm.lib;dinput8.lib;dxguid.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <GenerateManifest>false</GenerateManifest>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="MyShell.cpp" />
+    <ClInclude Include="..\3DBaseCode\mouse.H" />
+    <ClInclude Include="BaseFunc.h" />
+    <ClInclude Include="..\3DRole\BoothMask.h" />
+    <ClInclude Include="..\3DRole\Network\NetworkDef.h" />
+    <ClInclude Include="..\3DBaseCode\TxtMsgSet.h" />
+    <ClInclude Include="..\3DRole\ChatLog.h" />
+    <ClInclude Include="..\3DRole\GameMsg.h" />
+    <ClInclude Include="..\3DRole\Network\EncryptClient.h" />
+    <ClInclude Include="..\3DRole\Network\Socket.h" />
+    <ClInclude Include="..\3DRole\Network\NetMsg.h" />
+    <ClInclude Include="..\3DGameMap\MapObj.h" />
+    <ClInclude Include="..\3DGameMap\Path.h" />
+    <ClInclude Include="..\3DRole\AniEffect.h" />
+    <ClInclude Include="..\3DRole\SayHello.h" />
+    <ClInclude Include="..\3DRole\FloatingStr.h" />
+    <ClInclude Include="..\3DRole\ZoomNum.h" />
+    <ClInclude Include="..\3DRole\Role.h" />
+    <ClInclude Include="..\3DRole\EncryptData.h" />
+    <ClInclude Include="..\3DRole\ImageString.h" />
+    <ClInclude Include="..\3DRole\FDword.h" />
+    <ClInclude Include="..\3DRole\Player.h" />
+    <ClInclude Include="..\3DRole\MagicData.h" />
+    <ClInclude Include="..\3DRole\Magic.h" />
+    <ClInclude Include="..\3DBaseCode\GameDataSetProvisional.h" />
+    <ClInclude Include="..\3DRole\Pet.h" />
+    <ClInclude Include="..\3DRole\Friend.h" />
+    <ClInclude Include="..\3DRole\Enemy.h" />
+    <ClInclude Include="..\3DRole\ItemData.h" />
+    <ClInclude Include="..\3DGameMap\2DMapObj.h" />
+    <ClInclude Include="..\3DGameMap\2DMapItem.h" />
+    <ClInclude Include="..\3DRole\Item.h" />
+    <ClInclude Include="..\3DRole\Trade.h" />
+    <ClInclude Include="..\3DRole\Package.h" />
+    <ClInclude Include="..\3DRole\Bank.h" />
+    <ClInclude Include="..\3DRole\XpCounterDown.h" />
+    <ClInclude Include="..\3DRole\WeaponSkill.h" />
+    <ClInclude Include="..\3DRole\TaskDialog.h" />
+    <ClInclude Include="..\3DRole\Team.h" />
+    <ClInclude Include="..\3DRole\Professional.h" />
+    <ClInclude Include="..\3DRole\Booth.h" />
+    <ClInclude Include="..\3DRole\BoothManager.h" />
+    <ClInclude Include="..\3DBaseCode\NetStringPacker.h" />
+    <ClInclude Include="..\3DRole\Bulletin.h" />
+    <ClInclude Include="..\3DRole\Dummy.h" />
+    <ClInclude Include="..\3DRole\DiceManager.h" />
+    <ClInclude Include="..\3DRole\Check.h" />
+    <ClInclude Include="..\3DBaseCode\MyTimer.h" />
+    <ClInclude Include="..\3DRole\Hero.h" />
+    <ClInclude Include="..\3DGameMap\MagicEffect.h" />
+    <ClInclude Include="..\3DRole\GamePlayerSet.h" />
+    <ClInclude Include="..\3DRole\Entrance.h" />
+    <ClInclude Include="..\3DRole\Network\MsgAction.h" />
+    <ClInclude Include="..\3DRole\Network\MsgTalk.h" />
+    <ClInclude Include="..\3DRole\Network\MsgInteract.h" />
+    <ClInclude Include="..\3DRole\Network\MsgWalk.h" />
+    <ClInclude Include="..\3DRole\Network\MsgMapItem.h" />
+    <ClInclude Include="..\3DRole\Network\MsgName.h" />
+    <ClInclude Include="..\3DRole\Network\MsgSyndicate.h" />
+    <ClInclude Include="..\3DRole\Network\MsgNpcInfo.h" />
+    <ClInclude Include="..\3DRole\Network\MsgNpc.h" />
+    <ClInclude Include="..\3DRole\Network\MsgItem.h" />
+    <ClInclude Include="..\3DRole\Network\MsgPackage.h" />
+    <ClInclude Include="..\3DRole\Network\MsgGemEmbed.h" />
+    <ClInclude Include="..\3DRole\MsgDataArray.h" />
+    <ClInclude Include="..\3DRole\Network\MsgFuse.h" />
+    <ClInclude Include="..\3DRole\Network\MsgDice.h" />
+    <ClInclude Include="..\3DRole\Network\MsgFriend.h" />
+    <ClInclude Include="..\3DRole\Network\MsgTeam.h" />
+    <ClInclude Include="..\3DRole\Network\MsgBoard.h" />
+    <ClInclude Include="..\3DRole\Network\MsgTaskDialog.h" />
+    <ClInclude Include="..\3DRole\Network\MsgFriendInfo.h" />
+    <ClInclude Include="..\3DRole\Network\MsgTime.h" />
+    <ClInclude Include="..\3DRole\MsgPetInfo.h" />
+    <ClInclude Include="..\3DRole\Network\MsgSynMemberInfo.h" />
+    <ClInclude Include="..\3DRole\Network\MsgMapInfo.h" />
+    <ClInclude Include="..\3DRole\Network\MsgNpcInfoEx.h" />
+    <ClInclude Include="..\3DRole\MsgItemInfoEx.h" />
+    <ClInclude Include="..\3DRole\Network\MsgSyndicateAttributeInfo.h" />
+    <ClInclude Include="..\3DRole\Network\MsgMagicInfo.h" />
+    <ClInclude Include="..\3DRole\Network\MsgMagicEffect.h" />
+    <ClInclude Include="..\3DRole\Network\MsgFlushExp.h" />
+    <ClInclude Include="..\3DRole\Network\MsgTeamAward.h" />
+    <ClInclude Include="..\3DRole\Network\MsgWeather.h" />
+    <ClInclude Include="..\3DRole\Network\MsgTeamMember.h" />
+    <ClInclude Include="..\3DRole\Network\MsgConnect.h" />
+    <ClInclude Include="..\3DRole\Network\MsgLoginReply.h" />
+    <ClInclude Include="..\3DRole\Network\MsgAccount.h" />
+    <ClInclude Include="..\3DRole\Network\MsgWeaponSkill.h" />
+    <ClInclude Include="..\3DRole\Network\MsgTrade.h" />
+    <ClInclude Include="..\3DRole\Network\MsgUserAttrib.h" />
+    <ClInclude Include="..\3DRole\Network\MsgItemInfo.h" />
+    <ClInclude Include="..\3DRole\Network\MsgUserInfo.h" />
+    <ClInclude Include="..\3DRole\Network\MsgTick.h" />
+    <ClInclude Include="..\3DRole\Network\MsgPlayer.h" />
+    <ClInclude Include="..\3DRole\Network\MsgLogin.h" />
+    <ClInclude Include="..\3DRole\Network\MsgLoginAccountEx.h" />
+    <ClInclude Include="..\3DRole\Network\MsgAllot.h" />
+    <ClInclude Include="..\3DRole\Network\AllMsg.h" />
+    <ClInclude Include="..\3DGameMap\Radar.h" />
+    <ClInclude Include="..\3DGameMap\MapLayer.h" />
+    <ClInclude Include="..\3DGameMap\2DMapCoverObj.h" />
+    <ClInclude Include="..\3DGameMap\Layer.h" />
+    <ClInclude Include="..\3DGameMap\2DMapTerrainObjPart.h" />
+    <ClInclude Include="..\3DGameMap\2DMapTerrainObj.h" />
+    <ClInclude Include="..\3DGameMap\3DMapObj.h" />
+    <ClInclude Include="..\3DGameMap\3DMapEffect.h" />
+    <ClInclude Include="..\3DGameMap\MapSound.h" />
+    <ClInclude Include="..\3DGameMap\InteractiveLayer.h" />
+    <ClInclude Include="..\3DGameMap\PuzzleBmp.h" />
+    <ClInclude Include="..\3DGameMap\2DMapRegion.h" />
+    <ClInclude Include="..\3DGameMap\TerrainLayer.h" />
+    <ClInclude Include="..\3DGameMap\TqTerrain.h" />
+    <ClInclude Include="..\3DGameMap\MapItemManager.h" />
+    <ClInclude Include="..\3DGameMap\MagicEffectManager.h" />
+    <ClInclude Include="..\3DGameMap\TerrainEffectManager.h" />
+    <ClInclude Include="..\3DGameMap\IInfoView.h" />
+    <ClInclude Include="..\3DGameMap\InfoViewManager.h" />
+    <ClInclude Include="..\3DGameMap\TerrainObjManager.h" />
+    <ClInclude Include="..\3DGameMap\3DGameMap.h" />
+    <ClInclude Include="..\3DRole\Register.h" />
+    <ClInclude Include="..\3DRole\ShopData.h" />
+    <ClInclude Include="..\3DRole\Shop.h" />
+    <ClInclude Include="..\3DGameMap\firebug.h" />
+    <ClInclude Include="..\3DGameMap\cloud.h" />
+    <ClInclude Include="..\3DGameMap\weather.h" />
+    <ClInclude Include="..\3DGameMap\airbubble.h" />
+    <ClInclude Include="..\3DGameMap\SkyLayer.h" />
+    <ClInclude Include="..\3DGameMap\Rose.h" />
+    <ClInclude Include="..\3DGameMap\PatternRose.h" />
+    <ClInclude Include="..\3DGameMap\FloorLayer.h" />
+    <ClInclude Include="..\3DGameMap\SkyRose.h" />
+    <ClInclude Include="..\3DRole\ImgNumCounter.h" />
+    <ClInclude Include="..\3DRole\3DSimpleRole.h" />
+    <ClInclude Include="..\3DBaseCode\Physics.h" />
+    <ClInclude Include="..\3DGameMap\3DMapSimpleObj.h" />
+    <ClInclude Include="..\3DGameMap\StringInfoView.h" />
+    <ClInclude Include="..\3DGameMap\AniInfoView.h" />
+    <ClInclude Include="..\3DGameMap\2DMapPuzzleObj.h" />
+    <ClInclude Include="..\3DGameMap\SurfaceLayer.h" />
+    <ClInclude Include="..\3DGameMap\3DMagicMapItem.h" />
+    <ClInclude Include="..\3DGameMap\2DMapSceneObj.h" />
+    <ClInclude Include="..\3DGameMap\SceneLayer.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="MyShell.h" />
+    <ClInclude Include="MyButton.h" />
+    <ClInclude Include="MyCheck.h" />
+    <ClInclude Include="FontScale.h" />
+    <ClInclude Include="MyScrollButton.h" />
+    <ClInclude Include="MyCombo.h" />
+    <ClInclude Include="MyEdit.h" />
+    <ClInclude Include="MyEditRect.h" />
+    <ClInclude Include="MyGrid.h" />
+    <ClInclude Include="MyImage.h" />
+    <ClInclude Include="MyList.h" />
+    <ClInclude Include="MyProgress.h" />
+    <ClInclude Include="MySlider.h" />
+    <ClInclude Include="MyStatic.h" />
+    <ClInclude Include="ServerAdv.h" />
+    <ClInclude Include="ServerStatus.h" />
+    <ClInclude Include="WebBrowser.h" />
+    <ClInclude Include="DlgLogo.h" />
+    <ClInclude Include="DlgListBox.h" />
+    <ClInclude Include="DlgDiceList.h" />
+    <ClInclude Include="DlgPk.h" />
+    <ClInclude Include="DlgFacState.h" />
+    <ClInclude Include="DlgProIntro.h" />
+    <ClInclude Include="DlgHawk.h" />
+    <ClInclude Include="DlgOther.h" />
+    <ClInclude Include="MenuGroup.h" />
+    <ClInclude Include="DlgTitleBar.h" />
+    <ClInclude Include="DlgBag.h" />
+    <ClInclude Include="MenuTalk.h" />
+    <ClInclude Include="DlgTalkAct.h" />
+    <ClInclude Include="DlgMsgSend.h" />
+    <ClInclude Include="DlgLay.h" />
+    <ClInclude Include="DlgHelp.h" />
+    <ClInclude Include="DlgBlack.h" />
+    <ClInclude Include="DlgInsHelp.h" />
+    <ClInclude Include="DlgEnmState.h" />
+    <ClInclude Include="DlgFrdState.h" />
+    <ClInclude Include="DlgEnemy.h" />
+    <ClInclude Include="DlgMpcGoods.h" />
+    <ClInclude Include="DlgMsgReceive.h" />
+    <ClInclude Include="DlgNpcBuy.h" />
+    <ClInclude Include="DlgFriend.h" />
+    <ClInclude Include="DlgAct.h" />
+    <ClInclude Include="DlgEffigy.h" />
+    <ClInclude Include="DlgImprove.h" />
+    <ClInclude Include="DlgRoleChoose.h" />
+    <ClInclude Include="DlgNpcFace.h" />
+    <ClInclude Include="DlgDepot.h" />
+    <ClInclude Include="DlgMagic.h" />
+    <ClInclude Include="DlgGroup.h" />
+    <ClInclude Include="DlgKongfu.h" />
+    <ClInclude Include="DlgFuse.h" />
+    <ClInclude Include="DlgLevWord.h" />
+    <ClInclude Include="DlgEmbed.h" />
+    <ClInclude Include="DlgHotkey.h" />
+    <ClInclude Include="DlgTrade.h" />
+    <ClInclude Include="DlgLog.h" />
+    <ClInclude Include="..\3DRole\Network\MsgRegister.h" />
+    <ClInclude Include="DlgRoleCreate.h" />
+    <ClInclude Include="DlgQuery_Weapon.h" />
+    <ClInclude Include="DlgNpcEquip.h" />
+    <ClInclude Include="DlgSetup.h" />
+    <ClInclude Include="DlgSkill.h" />
+    <ClInclude Include="DlgTask.h" />
+    <ClInclude Include="DlgXp.h" />
+    <ClInclude Include="DlgQuery_Mission.h" />
+    <ClInclude Include="DlgQuery_Role.h" />
+    <ClInclude Include="DlgQuery_Skill.h" />
+    <ClInclude Include="DlgChat.h" />
+    <ClInclude Include="DlgNpcBooth.h" />
+    <ClInclude Include="DlgCompose.h" />
+    <ClInclude Include="DlgConfirm.h" />
+    <ClInclude Include="DlgExeConfirm.h" />
+    <ClInclude Include="DlgExercise.h" />
+    <ClInclude Include="DlgDelRole.h" />
+    <ClInclude Include="DlgEnchant.h" />
+    <ClInclude Include="DlgDice.h" />
+    <ClInclude Include="DlgTalk.h" />
+    <ClInclude Include="DlgMpcBooth.h" />
+    <ClInclude Include="DlgQuery_Faction.h" />
+    <ClInclude Include="DlgLogin.h" />
+    <ClInclude Include="DlgQuery.h" />
+    <ClInclude Include="DlgMain.h" />
+    <ClInclude Include="MyShellDlg.h" />
+    <ClInclude Include="BkWnd.h" />
+    <ClInclude Include="..\3DRole\RC5_321216.h" />
+    <ClInclude Include="..\3DBaseCode\MD5.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MyShell.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="clientlib.vcxproj">
+      <Project>{A1B2C3D4-0007-4000-8000-000000000007}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\C3_CORE_DLL\c3core.vcxproj">
+      <Project>{A1B2C3D4-0003-4000-8000-000000000003}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <ProjectReference Include="..\Graphic\graphic.vcxproj">
+      <Project>{A1B2C3D4-000A-4000-8000-00000000000A}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <ProjectReference Include="..\GraphicData\graphicdata.vcxproj">
+      <Project>{A1B2C3D4-000C-4000-8000-00000000000C}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <ProjectReference Include="..\GameData\gamedata.vcxproj">
+      <Project>{A1B2C3D4-000E-4000-8000-00000000000E}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <ProjectReference Include="..\GameInput\gameinput.vcxproj">
+      <Project>{A1B2C3D4-0010-4000-8000-000000000010}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <ProjectReference Include="..\Role3D\role3d.vcxproj">
+      <Project>{A1B2C3D4-0012-4000-8000-000000000012}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <ProjectReference Include="..\RoleView\roleview.vcxproj">
+      <Project>{A1B2C3D4-0014-4000-8000-000000000014}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <ProjectReference Include="..\NDSound\ndsound.vcxproj">
+      <Project>{A1B2C3D4-0001-4000-8000-000000000001}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

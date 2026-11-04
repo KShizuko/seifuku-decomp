@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32"><Configuration>Debug</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32"><Configuration>Release</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{042AD06E-54F5-474D-8522-107DFAFBDDC3}</ProjectGuid>
+    <RootNamespace>Common</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\props\seifuku-server.props" />
+  <ItemGroup>
+    <ClCompile Include="common.cpp" />
+    <ClCompile Include="logfile.cpp" />
+    <ClCompile Include="BaseFunc.cpp" />
+    <ClCompile Include="IniFile.cpp" />
+    <ClCompile Include="StringManager.cpp" />
+    <ClCompile Include="MyHeap.cpp" />
+    <ClCompile Include="ThreadBase.cpp" />
+    <ClCompile Include="TimeOut.cpp" />
+    <ClCompile Include="NetStringPacker.cpp" />
+    <ClCompile Include="VarType.cpp" />
+    <ClInclude Include="VarType.h" />
+    <ClInclude Include="Array.h" />
+    <ClInclude Include="mycom.h" />
+    <ClInclude Include="AutoPtr.h" />
+    <ClInclude Include="AutoLink.h" />
+    <ClInclude Include="AutoLinkSet.h" />
+    <ClInclude Include="GameObjSet.h" />
+    <ClInclude Include="Index.h" />
+    <ClInclude Include="MyStack.h" />
+    <ClInclude Include="TickOver.h" />
+    <ClInclude Include="T_MyQueue.h" />
+    <ClInclude Include="T_SafePtr.h" />
+    <ClInclude Include="T_SingleMap.h" />
+    <ClInclude Include="NetStringPacker.h" />
+    <ClInclude Include="TimeOut.h" />
+    <ClInclude Include="ThreadBase.h" />
+    <ClInclude Include="MyHeap.h" />
+    <ClInclude Include="StringManager.h" />
+    <ClInclude Include="IniFile.h" />
+    <ClInclude Include="basetype.h" />
+    <ClInclude Include="BaseFunc.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="logfile.h" />
+    <ClInclude Include="MyLock.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

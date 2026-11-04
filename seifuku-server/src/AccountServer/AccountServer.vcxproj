@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32"><Configuration>Debug</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32"><Configuration>Release</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D34454B4-30F8-45A4-A1DF-802B09EE288F}</ProjectGuid>
+    <RootNamespace>AccountServer</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\props\seifuku-server.props" />
+  <Import Project="..\..\props\seifuku-connector.props" />
+  <ItemDefinitionGroup>
+    <ClCompile><AdditionalIncludeDirectories>.;GameBaseCode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ClCompile>
+    <Link><AdditionalDependencies>winmm.lib;%(AdditionalDependencies)</AdditionalDependencies></Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AccountServer.cpp" />
+    <ClCompile Include="AccountServerDlg.cpp" />
+    <ClInclude Include="AccountServer.h" />
+    <ClInclude Include="AccountServerDlg.h" />
+    <ClInclude Include="AllHeads.h" />
+    <ClInclude Include="resource.h" />
+    <ResourceCompile Include="AccountServer.rc" />
+    <None Include="res\AccountServer.ico" />
+    <None Include="res\AccountServer.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="AccountKernel.vcxproj"><Project>{4AD554EB-9DB9-4726-B2E9-BF07EEA66B52}</Project></ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A1B2C3D4-0013-4000-8000-000000000013}</ProjectGuid>
+    <RootNamespace>role3d_tests</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectSubType>NativeUnitTestProject</ProjectSubType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Debug'">true</UseDebugLibraries>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Release'">false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\props\seifuku.props" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(VCInstallDir)Auxiliary\VS\UnitTest\include;$(SeifukuRoot)src\Role3D;$(SeifukuRoot)src\3DBaseCode;$(SeifukuRoot)src\GraphicData;$(SeifukuRoot)src\Graphic;$(SeifukuRoot)src\C3_CORE_DLL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <UseFullPaths>true</UseFullPaths>
+      <PreprocessorDefinitions>ROLE3D_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(VCInstallDir)Auxiliary\VS\UnitTest\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SeifukuRoot)obj\role3d\$(Configuration)\Game3DEffectEx.obj;$(SeifukuRoot)obj\role3d\$(Configuration)\3DRolePart.obj;$(SeifukuRoot)obj\role3d\$(Configuration)\3DSimpleObj.obj;$(SeifukuRoot)obj\role3d\$(Configuration)\3DRoleEx.obj;$(SeifukuRoot)obj\role3d\$(Configuration)\MyHeap.obj;$(SeifukuRoot)obj\role3d\$(Configuration)\BaseFunc.obj;$(SeifukuRoot)bin\$(Configuration)\GraphicData.lib;$(SeifukuRoot)bin\$(Configuration)\graphic.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Game3DEffectEx_tests.cpp" />
+    <ClCompile Include="3DRolePart_tests.cpp" />
+    <ClCompile Include="3DSimpleObj_tests.cpp" />
+    <ClCompile Include="3DRoleEx_tests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Role3D\role3d.vcxproj">
+      <Project>{A1B2C3D4-0012-4000-8000-000000000012}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

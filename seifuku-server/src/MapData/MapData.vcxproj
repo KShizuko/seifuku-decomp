@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32"><Configuration>Debug</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32"><Configuration>Release</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A576C1FA-23E3-4864-96D8-D2CC8896AEFC}</ProjectGuid>
+    <RootNamespace>MapData</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\props\seifuku-server.props" />
+  <ItemDefinitionGroup>
+    <ClCompile><AdditionalIncludeDirectories>.;source;..\Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="source\Cell.cpp" />
+    <ClCompile Include="source\Layer.cpp" />
+    <ClCompile Include="source\MapData.cpp" />
+    <ClCompile Include="source\MapDataPath.cpp" />
+    <ClCompile Include="source\MapObj.cpp" />
+    <ClCompile Include="source\TerrainObj.cpp" />
+    <ClCompile Include="source\TerrainObjPart.cpp" />
+    <ClInclude Include="I_MapData.h" />
+    <ClInclude Include="source\Cell.h" />
+    <ClInclude Include="source\Layer.h" />
+    <ClInclude Include="source\MapData.h" />
+    <ClInclude Include="source\MapObj.h" />
+    <ClInclude Include="source\TerrainObj.h" />
+    <ClInclude Include="source\TerrainObjPart.h" />
+    <ClInclude Include="source\typedef.h" />
+    <ClInclude Include="source\T_CompactObjSet.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

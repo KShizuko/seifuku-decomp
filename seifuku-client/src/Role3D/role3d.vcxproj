@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A1B2C3D4-0012-4000-8000-000000000012}</ProjectGuid>
+    <RootNamespace>role3d</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Debug'">true</UseDebugLibraries>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Release'">false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\props\seifuku.props" />
+  <PropertyGroup>
+    <TargetName>Role3D</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SeifukuRoot)src\3DBaseCode;$(SeifukuRoot)src\GraphicData;$(SeifukuRoot)src\Graphic;$(SeifukuRoot)src\C3_CORE_DLL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ROLE3D_EXPORTS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(SeifukuRoot)bin\$(Configuration)\GraphicData.lib;$(SeifukuRoot)bin\$(Configuration)\graphic.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="..\Graphic\BaseFunc.cpp" />
+    <ClInclude Include="..\Graphic\BaseFunc.h" />
+    <ClCompile Include="..\3DBaseCode\MyHeap.cpp" />
+    <ClInclude Include="..\3DBaseCode\MyHeap.h" />
+    <ClCompile Include="Game3DEffectEx.cpp" />
+    <ClCompile Include="3DRolePart.cpp" />
+    <ClCompile Include="3DSimpleObj.cpp" />
+    <ClCompile Include="3DRoleEx.cpp" />
+    <ClInclude Include="Game3DEffectEx.h" />
+    <ClInclude Include="3DRolePart.h" />
+    <ClInclude Include="3DSimpleObj.h" />
+    <ClInclude Include="3DRoleEx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GraphicData\graphicdata.vcxproj">
+      <Project>{A1B2C3D4-000C-4000-8000-00000000000C}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <ProjectReference Include="..\Graphic\graphic.vcxproj">
+      <Project>{A1B2C3D4-000A-4000-8000-00000000000A}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

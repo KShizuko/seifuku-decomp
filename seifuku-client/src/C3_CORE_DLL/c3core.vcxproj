@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A1B2C3D4-0003-4000-8000-000000000003}</ProjectGuid>
+    <RootNamespace>c3core</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Debug'">true</UseDebugLibraries>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Release'">false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\props\seifuku.props" />
+  <Import Project="..\FreeType\freetype.props" />
+  <PropertyGroup>
+    <TargetName>C3_CORE_DLL</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SeifukuRoot)src\TqPackage;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary Condition="'$(Configuration)'=='Debug'">MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(Configuration)'=='Release'">MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>C3_CORE_DLL_EXPORTS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(OutDir)TqPackage.lib;$(OutDir)freetype2110.lib;d3d9.lib;winmm.lib;windowscodecs.lib;ole32.lib;uuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>c3core.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="c3_main.cpp" />
+    <ClCompile Include="c3_key.cpp" />
+    <ClCompile Include="c3_font.cpp" />
+    <ClCompile Include="c3_datafile.cpp" />
+    <ClCompile Include="c3_common.cpp" />
+    <ClCompile Include="c3_texture.cpp" />
+    <ClCompile Include="c3_profile.cpp" />
+    <ClCompile Include="c3_camera.cpp" />
+    <ClCompile Include="c3_line.cpp" />
+    <ClCompile Include="c3_omni.cpp" />
+    <ClCompile Include="c3_point.cpp" />
+    <ClCompile Include="c3_scene.cpp" />
+    <ClCompile Include="c3_sprite.cpp" />
+    <ClCompile Include="c3_phy.cpp" />
+    <ClCompile Include="c3_shape.cpp" />
+    <ClCompile Include="c3_ptcl.cpp" />
+    <ClCompile Include="c3_capscreen.cpp" />
+    <ClCompile Include="seifuku_jpegenc.cpp" />
+    <ClCompile Include="d3dx8compat.cpp" />
+    <ClInclude Include="d3dx8compat.h" />
+    <ClInclude Include="seifuku_jpegenc.h" />
+    <ClInclude Include="c3_common.h" />
+    <ClInclude Include="c3_main.h" />
+    <ClInclude Include="c3_texture.h" />
+    <ClInclude Include="c3_camera.h" />
+    <ClInclude Include="c3_line.h" />
+    <ClInclude Include="c3_omni.h" />
+    <ClInclude Include="c3_point.h" />
+    <ClInclude Include="c3_datafile.h" />
+    <ClInclude Include="c3_key.h" />
+    <ClInclude Include="c3_font.h" />
+    <ClInclude Include="c3_scene.h" />
+    <ClInclude Include="c3_sprite.h" />
+    <ClInclude Include="c3_phy.h" />
+    <ClInclude Include="c3_shape.h" />
+    <ClInclude Include="c3_ptcl.h" />
+    <ClInclude Include="c3_capscreen.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

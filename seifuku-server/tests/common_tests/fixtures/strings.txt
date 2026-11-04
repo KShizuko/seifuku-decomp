@@ -1,0 +1,7 @@
+; synthetic string file for CStringManager (tests/common_tests)
+KEY1=Hello
+  KEY2  =  spaced value  
+no equals sign here
+;KEYX=commented
+KEY1=Replaced
+KEY3=a=b

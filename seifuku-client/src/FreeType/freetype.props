@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SeifukuRoot)src\FreeType;$(SeifukuRoot)vendor\freetype-2.1.10\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>FT_CONFIG_OPTIONS_H=&lt;c3_ftoption.h&gt;;FT_CONFIG_MODULES_H=&lt;c3_ftmodule.h&gt;;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>

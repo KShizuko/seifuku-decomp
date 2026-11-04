@@ -1,0 +1,57 @@
+#ifndef MSGDIALOG_H
+#define MSGDIALOG_H
+
+#include "NetMsg.h"
+#include "NetStringPacker.h"
+
+WORLDKERNEL_BEGIN
+enum {
+		MSGDIALOG_TEXT		= 1,
+		MSGDIALOG_LINK,
+		MSGDIALOG_EDIT,
+		MSGDIALOG_PIC,
+		MSGDIALOG_LISTLINE,
+		MSGDIALOG_CREATE	= 100,
+		MSGDIALOG_ANSWER	= 101,
+		MSGDIALOG_TASKID	= 102,
+};
+
+class CMsgDialog : public CNetMsg  
+{
+public:
+	CMsgDialog();
+	virtual ~CMsgDialog();
+	
+	BOOL	Create	(int nAction, LPCTSTR szText, int idxTask, int nData);
+	BOOL	Create	(int nAction, int x, int y, int nPic, int idxTask);
+	BOOL	Create	(int nAction, int idxTask);
+
+public:
+	void			Process		(void *pInfo);
+
+private:
+	typedef struct {
+		MSGHEAD_DEFINE
+
+		union{
+			struct{
+				USHORT	usPosX;
+				USHORT	usPosY;
+			};
+			DWORD	idTask;
+		};
+		USHORT	usData;
+		UCHAR	idxTask;
+		UCHAR	ucAction;
+		char	szBuf[1];
+	}MSG_Info;
+
+	MSG_Info*	m_pInfo;
+
+private:
+	CNetStringPacker	m_StrPacker;
+
+};
+WORLDKERNEL_END
+
+#endif 

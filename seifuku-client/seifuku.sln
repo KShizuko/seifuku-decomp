@@ -1,0 +1,220 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ndsound", "src\NDSound\ndsound.vcxproj", "{A1B2C3D4-0001-4000-8000-000000000001}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ndsound_tests", "tests\NDSound\ndsound_tests.vcxproj", "{A1B2C3D4-0002-4000-8000-000000000002}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-0001-4000-8000-000000000001} = {A1B2C3D4-0001-4000-8000-000000000001}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "freetype", "src\FreeType\freetype.vcxproj", "{A1B2C3D4-0018-4000-8000-000000000018}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c3core", "src\C3_CORE_DLL\c3core.vcxproj", "{A1B2C3D4-0003-4000-8000-000000000003}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-0008-4000-8000-000000000008} = {A1B2C3D4-0008-4000-8000-000000000008}
+		{A1B2C3D4-0018-4000-8000-000000000018} = {A1B2C3D4-0018-4000-8000-000000000018}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c3core_tests", "tests\C3_CORE_DLL\c3core_tests.vcxproj", "{A1B2C3D4-0004-4000-8000-000000000004}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-0003-4000-8000-000000000003} = {A1B2C3D4-0003-4000-8000-000000000003}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "clientlib", "src\MyShell\clientlib.vcxproj", "{A1B2C3D4-0007-4000-8000-000000000007}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client", "src\MyShell\client.vcxproj", "{A1B2C3D4-0005-4000-8000-000000000005}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-0001-4000-8000-000000000001} = {A1B2C3D4-0001-4000-8000-000000000001}
+		{A1B2C3D4-0003-4000-8000-000000000003} = {A1B2C3D4-0003-4000-8000-000000000003}
+		{A1B2C3D4-0007-4000-8000-000000000007} = {A1B2C3D4-0007-4000-8000-000000000007}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client_tests", "tests\MyShell\client_tests.vcxproj", "{A1B2C3D4-0006-4000-8000-000000000006}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-0005-4000-8000-000000000005} = {A1B2C3D4-0005-4000-8000-000000000005}
+		{A1B2C3D4-0007-4000-8000-000000000007} = {A1B2C3D4-0007-4000-8000-000000000007}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tqpackage", "src\TqPackage\tqpackage.vcxproj", "{A1B2C3D4-0008-4000-8000-000000000008}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tqpackage_tests", "tests\TqPackage\tqpackage_tests.vcxproj", "{A1B2C3D4-0009-4000-8000-000000000009}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-0008-4000-8000-000000000008} = {A1B2C3D4-0008-4000-8000-000000000008}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "datathread", "src\DataThread\datathread.vcxproj", "{A1B2C3D4-0016-4000-8000-000000000016}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "datathread_tests", "tests\DataThread\datathread_tests.vcxproj", "{A1B2C3D4-0017-4000-8000-000000000017}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-0016-4000-8000-000000000016} = {A1B2C3D4-0016-4000-8000-000000000016}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "graphic", "src\Graphic\graphic.vcxproj", "{A1B2C3D4-000A-4000-8000-00000000000A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-0003-4000-8000-000000000003} = {A1B2C3D4-0003-4000-8000-000000000003}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "graphic_tests", "tests\Graphic\graphic_tests.vcxproj", "{A1B2C3D4-000B-4000-8000-00000000000B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-000A-4000-8000-00000000000A} = {A1B2C3D4-000A-4000-8000-00000000000A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "graphicdata", "src\GraphicData\graphicdata.vcxproj", "{A1B2C3D4-000C-4000-8000-00000000000C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-000A-4000-8000-00000000000A} = {A1B2C3D4-000A-4000-8000-00000000000A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "graphicdata_tests", "tests\GraphicData\graphicdata_tests.vcxproj", "{A1B2C3D4-000D-4000-8000-00000000000D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-000C-4000-8000-00000000000C} = {A1B2C3D4-000C-4000-8000-00000000000C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gamedata", "src\GameData\gamedata.vcxproj", "{A1B2C3D4-000E-4000-8000-00000000000E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-000C-4000-8000-00000000000C} = {A1B2C3D4-000C-4000-8000-00000000000C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gamedata_tests", "tests\GameData\gamedata_tests.vcxproj", "{A1B2C3D4-000F-4000-8000-00000000000F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-000E-4000-8000-00000000000E} = {A1B2C3D4-000E-4000-8000-00000000000E}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gameinput", "src\GameInput\gameinput.vcxproj", "{A1B2C3D4-0010-4000-8000-000000000010}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gameinput_tests", "tests\GameInput\gameinput_tests.vcxproj", "{A1B2C3D4-0011-4000-8000-000000000011}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-0010-4000-8000-000000000010} = {A1B2C3D4-0010-4000-8000-000000000010}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "role3d", "src\Role3D\role3d.vcxproj", "{A1B2C3D4-0012-4000-8000-000000000012}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-000A-4000-8000-00000000000A} = {A1B2C3D4-000A-4000-8000-00000000000A}
+		{A1B2C3D4-000C-4000-8000-00000000000C} = {A1B2C3D4-000C-4000-8000-00000000000C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "role3d_tests", "tests\Role3D\role3d_tests.vcxproj", "{A1B2C3D4-0013-4000-8000-000000000013}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-0012-4000-8000-000000000012} = {A1B2C3D4-0012-4000-8000-000000000012}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "roleview", "src\RoleView\roleview.vcxproj", "{A1B2C3D4-0014-4000-8000-000000000014}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-0012-4000-8000-000000000012} = {A1B2C3D4-0012-4000-8000-000000000012}
+		{A1B2C3D4-000E-4000-8000-00000000000E} = {A1B2C3D4-000E-4000-8000-00000000000E}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "roleview_tests", "tests\RoleView\roleview_tests.vcxproj", "{A1B2C3D4-0015-4000-8000-000000000015}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1B2C3D4-0014-4000-8000-000000000014} = {A1B2C3D4-0014-4000-8000-000000000014}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1B2C3D4-0001-4000-8000-000000000001}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0001-4000-8000-000000000001}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0001-4000-8000-000000000001}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0001-4000-8000-000000000001}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-0002-4000-8000-000000000002}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0002-4000-8000-000000000002}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0002-4000-8000-000000000002}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0002-4000-8000-000000000002}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-0003-4000-8000-000000000003}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0003-4000-8000-000000000003}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0003-4000-8000-000000000003}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0003-4000-8000-000000000003}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-0004-4000-8000-000000000004}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0004-4000-8000-000000000004}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0004-4000-8000-000000000004}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0004-4000-8000-000000000004}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-0005-4000-8000-000000000005}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0005-4000-8000-000000000005}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0005-4000-8000-000000000005}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0005-4000-8000-000000000005}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-0006-4000-8000-000000000006}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0006-4000-8000-000000000006}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0006-4000-8000-000000000006}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0006-4000-8000-000000000006}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-0007-4000-8000-000000000007}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0007-4000-8000-000000000007}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0007-4000-8000-000000000007}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0007-4000-8000-000000000007}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-0008-4000-8000-000000000008}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0008-4000-8000-000000000008}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0008-4000-8000-000000000008}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0008-4000-8000-000000000008}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-0009-4000-8000-000000000009}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0009-4000-8000-000000000009}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0009-4000-8000-000000000009}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0009-4000-8000-000000000009}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-0016-4000-8000-000000000016}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0016-4000-8000-000000000016}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0016-4000-8000-000000000016}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0016-4000-8000-000000000016}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-0017-4000-8000-000000000017}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0017-4000-8000-000000000017}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0017-4000-8000-000000000017}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0017-4000-8000-000000000017}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-0018-4000-8000-000000000018}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0018-4000-8000-000000000018}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0018-4000-8000-000000000018}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0018-4000-8000-000000000018}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-000A-4000-8000-00000000000A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-000A-4000-8000-00000000000A}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-000A-4000-8000-00000000000A}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-000A-4000-8000-00000000000A}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-000B-4000-8000-00000000000B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-000B-4000-8000-00000000000B}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-000B-4000-8000-00000000000B}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-000B-4000-8000-00000000000B}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-000C-4000-8000-00000000000C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-000C-4000-8000-00000000000C}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-000C-4000-8000-00000000000C}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-000C-4000-8000-00000000000C}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-000D-4000-8000-00000000000D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-000D-4000-8000-00000000000D}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-000D-4000-8000-00000000000D}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-000D-4000-8000-00000000000D}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-000E-4000-8000-00000000000E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-000E-4000-8000-00000000000E}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-000E-4000-8000-00000000000E}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-000E-4000-8000-00000000000E}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-000F-4000-8000-00000000000F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-000F-4000-8000-00000000000F}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-000F-4000-8000-00000000000F}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-000F-4000-8000-00000000000F}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-0010-4000-8000-000000000010}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0010-4000-8000-000000000010}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0010-4000-8000-000000000010}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0010-4000-8000-000000000010}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-0011-4000-8000-000000000011}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0011-4000-8000-000000000011}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0011-4000-8000-000000000011}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0011-4000-8000-000000000011}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-0012-4000-8000-000000000012}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0012-4000-8000-000000000012}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0012-4000-8000-000000000012}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0012-4000-8000-000000000012}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-0013-4000-8000-000000000013}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0013-4000-8000-000000000013}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0013-4000-8000-000000000013}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0013-4000-8000-000000000013}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-0014-4000-8000-000000000014}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0014-4000-8000-000000000014}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0014-4000-8000-000000000014}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0014-4000-8000-000000000014}.Release|Win32.Build.0 = Release|Win32
+		{A1B2C3D4-0015-4000-8000-000000000015}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1B2C3D4-0015-4000-8000-000000000015}.Debug|Win32.Build.0 = Debug|Win32
+		{A1B2C3D4-0015-4000-8000-000000000015}.Release|Win32.ActiveCfg = Release|Win32
+		{A1B2C3D4-0015-4000-8000-000000000015}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
+

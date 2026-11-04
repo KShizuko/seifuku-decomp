@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A1B2C3D4-0014-4000-8000-000000000014}</ProjectGuid>
+    <RootNamespace>roleview</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Debug'">true</UseDebugLibraries>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Release'">false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\props\seifuku.props" />
+  <PropertyGroup>
+    <TargetName>RoleView</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SeifukuRoot)src\Role3D;$(SeifukuRoot)src\GameData;$(SeifukuRoot)src\3DBaseCode;$(SeifukuRoot)src\GraphicData;$(SeifukuRoot)src\Graphic;$(SeifukuRoot)src\C3_CORE_DLL;$(SeifukuRoot)src\NDSound;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ROLEVIEW_EXPORTS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(SeifukuRoot)bin\$(Configuration)\Role3D.lib;$(SeifukuRoot)bin\$(Configuration)\GameData.lib;$(SeifukuRoot)bin\$(Configuration)\GraphicData.lib;$(SeifukuRoot)bin\$(Configuration)\graphic.lib;$(SeifukuRoot)bin\$(Configuration)\NDsound.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="..\Graphic\BaseFunc.cpp" />
+    <ClInclude Include="..\Graphic\BaseFunc.h" />
+    <ClCompile Include="RoleView.cpp" />
+    <ClInclude Include="IRoleView.h" />
+    <ClCompile Include="3DRole.cpp" />
+    <ClInclude Include="3DRole.h" />
+    <ClCompile Include="3DStatuary.cpp" />
+    <ClInclude Include="3DStatuary.h" />
+    <ClCompile Include="3DTarget.cpp" />
+    <ClInclude Include="3DTarget.h" />
+    <ClCompile Include="3DTaskNpc.cpp" />
+    <ClInclude Include="3DTaskNpc.h" />
+    <ClCompile Include="SynStone.cpp" />
+    <ClInclude Include="SynStone.h" />
+    <ClCompile Include="BoothNpc.cpp" />
+    <ClInclude Include="BoothNpc.h" />
+    <ClCompile Include="DiceView.cpp" />
+    <ClInclude Include="DiceView.h" />
+    <ClCompile Include="TerrainNpcView.cpp" />
+    <ClInclude Include="TerrainNpcView.h" />
+    <ClCompile Include="NpcXView.cpp" />
+    <ClInclude Include="NpcXView.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Role3D\role3d.vcxproj">
+      <Project>{A1B2C3D4-0012-4000-8000-000000000012}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <ProjectReference Include="..\GameData\gamedata.vcxproj">
+      <Project>{A1B2C3D4-000E-4000-8000-00000000000E}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SeifukuConnectorSrc>$(SeifukuRoot)vendor\mariadb-connector-c-3.3.19-src\</SeifukuConnectorSrc>
+    <SeifukuConnectorBuild>$(SeifukuRoot)vendor\build\</SeifukuConnectorBuild>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SeifukuConnectorSrc)include;$(SeifukuConnectorBuild)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SeifukuConnectorBuild)libmariadb\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mariadbclient.lib;ws2_32.lib;advapi32.lib;shlwapi.lib;crypt32.lib;secur32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

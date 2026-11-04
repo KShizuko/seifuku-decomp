@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A1B2C3D4-0006-4000-8000-000000000006}</ProjectGuid>
+    <RootNamespace>client_tests</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectSubType>NativeUnitTestProject</ProjectSubType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Debug'">true</UseDebugLibraries>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Release'">false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\props\seifuku.props" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(VCInstallDir)Auxiliary\VS\UnitTest\include;$(SeifukuRoot)src\MyShell;$(SeifukuRoot)src\3DRole;$(SeifukuRoot)src\3DRole\Network;$(SeifukuRoot)src\3DGameMap;$(SeifukuRoot)src\3DBaseCode;$(SeifukuRoot)src\Graphic;$(SeifukuRoot)src\GraphicData;$(SeifukuRoot)src\GameData;$(SeifukuRoot)src\GameInput;$(SeifukuRoot)src\Role3D;$(SeifukuRoot)src\RoleView;$(SeifukuRoot)src\C3_CORE_DLL;$(SeifukuRoot)src\NDSound;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <UseFullPaths>true</UseFullPaths>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(VCInstallDir)Auxiliary\VS\UnitTest\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>netapi32.lib;$(SeifukuRoot)bin\$(Configuration)\graphic.lib;$(SeifukuRoot)bin\$(Configuration)\GraphicData.lib;$(SeifukuRoot)bin\$(Configuration)\GameData.lib;$(SeifukuRoot)bin\$(Configuration)\GameInput.lib;$(SeifukuRoot)bin\$(Configuration)\Role3D.lib;$(SeifukuRoot)bin\$(Configuration)\RoleView.lib;$(SeifukuRoot)bin\$(Configuration)\C3_CORE_DLL.lib;$(SeifukuRoot)bin\$(Configuration)\NDsound.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>if not exist "$(OutDir)ini" mkdir "$(OutDir)ini"
+copy /Y "$(ProjectDir)fixtures\ini\LevExp.dat" "$(OutDir)ini\LevExp.dat" &gt;nul</Command>
+      <Message>Copying the hero's level-table fixture beside the tests</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MyShell\clientlib.vcxproj">
+      <Project>{A1B2C3D4-0007-4000-8000-000000000007}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\GraphicData\graphicdata.vcxproj">
+      <Project>{A1B2C3D4-000C-4000-8000-00000000000C}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\GameData\gamedata.vcxproj">
+      <Project>{A1B2C3D4-000E-4000-8000-00000000000E}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\GameInput\gameinput.vcxproj">
+      <Project>{A1B2C3D4-0010-4000-8000-000000000010}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Role3D\role3d.vcxproj">
+      <Project>{A1B2C3D4-0012-4000-8000-000000000012}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\RoleView\roleview.vcxproj">
+      <Project>{A1B2C3D4-0014-4000-8000-000000000014}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseFunc_tests.cpp" />
+    <ClCompile Include="GameMsg_tests.cpp" />
+    <ClCompile Include="NetMsg_tests.cpp" />
+    <ClCompile Include="FloatingStr_tests.cpp" />
+    <ClCompile Include="Role_tests.cpp" />
+    <ClCompile Include="EncryptData_tests.cpp" />
+    <ClCompile Include="Player_tests.cpp" />
+    <ClCompile Include="Magic_tests.cpp" />
+    <ClCompile Include="SayHello_tests.cpp" />
+    <ClCompile Include="Pet_tests.cpp" />
+    <ClCompile Include="Friend_tests.cpp" />
+    <ClCompile Include="Enemy_tests.cpp" />
+    <ClCompile Include="ItemData_tests.cpp" />
+    <ClCompile Include="2DMapObj_tests.cpp" />
+    <ClCompile Include="2DMapItem_tests.cpp" />
+    <ClCompile Include="Item_tests.cpp" />
+    <ClCompile Include="Trade_tests.cpp" />
+    <ClCompile Include="Package_tests.cpp" />
+    <ClCompile Include="Bank_tests.cpp" />
+    <ClCompile Include="XpCounterDown_tests.cpp" />
+    <ClCompile Include="WeaponSkill_tests.cpp" />
+    <ClCompile Include="TaskDialog_tests.cpp" />
+    <ClCompile Include="Team_tests.cpp" />
+    <ClCompile Include="Professional_tests.cpp" />
+    <ClCompile Include="Booth_tests.cpp" />
+    <ClCompile Include="BoothManager_tests.cpp" />
+    <ClCompile Include="NetStringPacker_tests.cpp" />
+    <ClCompile Include="Bulletin_tests.cpp" />
+    <ClCompile Include="Dummy_tests.cpp" />
+    <ClCompile Include="DiceManager_tests.cpp" />
+    <ClCompile Include="Check_tests.cpp" />
+    <ClCompile Include="MyTimer_tests.cpp" />
+    <ClCompile Include="MyHeap_tests.cpp" />
+    <ClCompile Include="EncryptFile_tests.cpp" />
+    <ClCompile Include="MyIni_tests.cpp" />
+    <ClCompile Include="ImageStringEx_tests.cpp" />
+    <ClCompile Include="ZoomInImgString_tests.cpp" />
+    <ClCompile Include="KillCounter_tests.cpp" />
+    <ClCompile Include="Hero_tests.cpp" />
+    <ClCompile Include="MagicEffect_tests.cpp" />
+    <ClCompile Include="GamePlayerSet_tests.cpp" />
+    <ClCompile Include="Entrance_tests.cpp" />
+    <ClCompile Include="MsgAction_tests.cpp" />
+    <ClCompile Include="MsgTalk_tests.cpp" />
+    <ClCompile Include="MsgInteract_tests.cpp" />
+    <ClCompile Include="MsgWalk_tests.cpp" />
+    <ClCompile Include="MsgMapItem_tests.cpp" />
+    <ClCompile Include="MsgName_tests.cpp" />
+    <ClCompile Include="MsgSyndicate_tests.cpp" />
+    <ClCompile Include="MsgNpcInfo_tests.cpp" />
+    <ClCompile Include="MsgNpc_tests.cpp" />
+    <ClCompile Include="MsgItem_tests.cpp" />
+    <ClCompile Include="MsgPackage_tests.cpp" />
+    <ClCompile Include="MsgGemEmbed_tests.cpp" />
+    <ClCompile Include="MsgDataArray_tests.cpp" />
+    <ClCompile Include="MsgFuse_tests.cpp" />
+    <ClCompile Include="MsgDice_tests.cpp" />
+    <ClCompile Include="MsgFriend_tests.cpp" />
+    <ClCompile Include="MsgTeam_tests.cpp" />
+    <ClCompile Include="MsgBoard_tests.cpp" />
+    <ClCompile Include="MsgTaskDialog_tests.cpp" />
+    <ClCompile Include="MsgFriendInfo_tests.cpp" />
+    <ClCompile Include="MsgTime_tests.cpp" />
+    <ClCompile Include="MsgPetInfo_tests.cpp" />
+    <ClCompile Include="MsgSynMemberInfo_tests.cpp" />
+    <ClCompile Include="MsgMapInfo_tests.cpp" />
+    <ClCompile Include="MsgNpcInfoEx_tests.cpp" />
+    <ClCompile Include="MsgItemInfoEx_tests.cpp" />
+    <ClCompile Include="MsgSyndicateAttributeInfo_tests.cpp" />
+    <ClCompile Include="MsgMagicInfo_tests.cpp" />
+    <ClCompile Include="MsgMagicEffect_tests.cpp" />
+    <ClCompile Include="MsgFlushExp_tests.cpp" />
+    <ClCompile Include="MsgTeamAward_tests.cpp" />
+    <ClCompile Include="MsgWeather_tests.cpp" />
+    <ClCompile Include="MsgTeamMember_tests.cpp" />
+    <ClCompile Include="MsgConnect_tests.cpp" />
+    <ClCompile Include="MsgLoginReply_tests.cpp" />
+    <ClCompile Include="MsgAccount_tests.cpp" />
+    <ClCompile Include="MsgWeaponSkill_tests.cpp" />
+    <ClCompile Include="MsgTrade_tests.cpp" />
+    <ClCompile Include="MsgUserAttrib_tests.cpp" />
+    <ClCompile Include="MsgItemInfo_tests.cpp" />
+    <ClCompile Include="MsgUserInfo_tests.cpp" />
+    <ClCompile Include="MsgTick_tests.cpp" />
+    <ClCompile Include="MsgPlayer_tests.cpp" />
+    <ClCompile Include="MsgLogin_tests.cpp" />
+    <ClCompile Include="MsgLoginAccountEx_tests.cpp" />
+    <ClCompile Include="MsgAllot_tests.cpp" />
+    <ClCompile Include="AllMsg_tests.cpp" />
+    <ClCompile Include="Radar_tests.cpp" />
+    <ClCompile Include="MapLayer_tests.cpp" />
+    <ClCompile Include="2DMapCoverObj_tests.cpp" />
+    <ClCompile Include="Layer_tests.cpp" />
+    <ClCompile Include="2DMapTerrainObjPart_tests.cpp" />
+    <ClCompile Include="2DMapTerrainObj_tests.cpp" />
+    <ClCompile Include="3DMapObj_tests.cpp" />
+    <ClCompile Include="3DMapEffect_tests.cpp" />
+    <ClCompile Include="MapSound_tests.cpp" />
+    <ClCompile Include="InteractiveLayer_tests.cpp" />
+    <ClCompile Include="PuzzleBmp_tests.cpp" />
+    <ClCompile Include="2DMapRegion_tests.cpp" />
+    <ClCompile Include="TerrainLayer_tests.cpp" />
+    <ClCompile Include="TqTerrain_tests.cpp" />
+    <ClCompile Include="MapItemManager_tests.cpp" />
+    <ClCompile Include="MagicEffectManager_tests.cpp" />
+    <ClCompile Include="TerrainEffectManager_tests.cpp" />
+    <ClCompile Include="IInfoView_tests.cpp" />
+    <ClCompile Include="InfoViewManager_tests.cpp" />
+    <ClCompile Include="TerrainObjManager_tests.cpp" />
+    <ClCompile Include="3DGameMap_tests.cpp" />
+    <ClCompile Include="Register_tests.cpp" />
+    <ClCompile Include="ShopData_tests.cpp" />
+    <ClCompile Include="Shop_tests.cpp" />
+    <ClCompile Include="firebug_tests.cpp" />
+    <ClCompile Include="cloud_tests.cpp" />
+    <ClCompile Include="weather_tests.cpp" />
+    <ClCompile Include="airbubble_tests.cpp" />
+    <ClCompile Include="SkyLayer_tests.cpp" />
+    <ClCompile Include="SkyRose_tests.cpp" />
+    <ClCompile Include="Rose_tests.cpp" />
+    <ClCompile Include="PatternRose_tests.cpp" />
+    <ClCompile Include="FloorLayer_tests.cpp" />
+    <ClCompile Include="ImgNumCounter_tests.cpp" />
+    <ClCompile Include="3DSimpleRole_tests.cpp" />
+    <ClCompile Include="Physics_tests.cpp" />
+    <ClCompile Include="3DMapSimpleObj_tests.cpp" />
+    <ClCompile Include="StringInfoView_tests.cpp" />
+    <ClCompile Include="AniInfoView_tests.cpp" />
+    <ClCompile Include="2DMapPuzzleObj_tests.cpp" />
+    <ClCompile Include="SurfaceLayer_tests.cpp" />
+    <ClCompile Include="3DMagicMapItem_tests.cpp" />
+    <ClCompile Include="2DMapSceneObj_tests.cpp" />
+    <ClCompile Include="SceneLayer_tests.cpp" />
+    <ClCompile Include="MyShell_tests.cpp" />
+    <ClCompile Include="MyButton_tests.cpp" />
+    <ClCompile Include="MyCheck_tests.cpp" />
+    <ClCompile Include="FontScale_tests.cpp" />
+    <ClCompile Include="MyScrollButton_tests.cpp" />
+    <ClCompile Include="MyCombo_tests.cpp" />
+    <ClCompile Include="MyEdit_tests.cpp" />
+    <ClCompile Include="MyEditRect_tests.cpp" />
+    <ClCompile Include="MyGrid_tests.cpp" />
+    <ClCompile Include="MyImage_tests.cpp" />
+    <ClCompile Include="MyList_tests.cpp" />
+    <ClCompile Include="MyProgress_tests.cpp" />
+    <ClCompile Include="MySlider_tests.cpp" />
+    <ClCompile Include="MyStatic_tests.cpp" />
+    <ClCompile Include="ServerAdv_tests.cpp" />
+    <ClCompile Include="ServerStatus_tests.cpp" />
+    <ClCompile Include="WebBrowser_tests.cpp" />
+    <ClCompile Include="DlgLogo_tests.cpp" />
+    <ClCompile Include="DlgListBox_tests.cpp" />
+    <ClCompile Include="DlgDiceList_tests.cpp" />
+    <ClCompile Include="DlgPk_tests.cpp" />
+    <ClCompile Include="DlgFacState_tests.cpp" />
+    <ClCompile Include="DlgProIntro_tests.cpp" />
+    <ClCompile Include="DlgHawk_tests.cpp" />
+    <ClCompile Include="DlgOther_tests.cpp" />
+    <ClCompile Include="MenuGroup_tests.cpp" />
+    <ClCompile Include="DlgTitleBar_tests.cpp" />
+    <ClCompile Include="DlgBag_tests.cpp" />
+    <ClCompile Include="MenuTalk_tests.cpp" />
+    <ClCompile Include="DlgTalkAct_tests.cpp" />
+    <ClCompile Include="DlgMsgSend_tests.cpp" />
+    <ClCompile Include="DlgLay_tests.cpp" />
+    <ClCompile Include="DlgHelp_tests.cpp" />
+    <ClCompile Include="DlgBlack_tests.cpp" />
+    <ClCompile Include="DlgInsHelp_tests.cpp" />
+    <ClCompile Include="DlgEnmState_tests.cpp" />
+    <ClCompile Include="DlgFrdState_tests.cpp" />
+    <ClCompile Include="DlgEnemy_tests.cpp" />
+    <ClCompile Include="DlgMpcGoods_tests.cpp" />
+    <ClCompile Include="DlgMsgReceive_tests.cpp" />
+    <ClCompile Include="DlgNpcBuy_tests.cpp" />
+    <ClCompile Include="DlgFriend_tests.cpp" />
+    <ClCompile Include="DlgAct_tests.cpp" />
+    <ClCompile Include="DlgEffigy_tests.cpp" />
+    <ClCompile Include="DlgImprove_tests.cpp" />
+    <ClCompile Include="DlgRoleChoose_tests.cpp" />
+    <ClCompile Include="DlgNpcFace_tests.cpp" />
+    <ClCompile Include="DlgDepot_tests.cpp" />
+    <ClCompile Include="DlgMagic_tests.cpp" />
+    <ClCompile Include="DlgGroup_tests.cpp" />
+    <ClCompile Include="DlgKongfu_tests.cpp" />
+    <ClCompile Include="DlgFuse_tests.cpp" />
+    <ClCompile Include="DlgLevWord_tests.cpp" />
+    <ClCompile Include="DlgEmbed_tests.cpp" />
+    <ClCompile Include="DlgHotkey_tests.cpp" />
+    <ClCompile Include="DlgTrade_tests.cpp" />
+    <ClCompile Include="DlgLog_tests.cpp" />
+    <ClCompile Include="MsgRegister_tests.cpp" />
+    <ClCompile Include="DlgRoleCreate_tests.cpp" />
+    <ClCompile Include="DlgQuery_Weapon_tests.cpp" />
+    <ClCompile Include="DlgNpcEquip_tests.cpp" />
+    <ClCompile Include="DlgSetup_tests.cpp" />
+    <ClCompile Include="DlgTask_tests.cpp" />
+    <ClCompile Include="DlgXp_tests.cpp" />
+    <ClCompile Include="DlgQuery_Mission_tests.cpp" />
+    <ClCompile Include="DlgQuery_Role_tests.cpp" />
+    <ClCompile Include="DlgQuery_Skill_tests.cpp" />
+    <ClCompile Include="DlgChat_tests.cpp" />
+    <ClCompile Include="DlgNpcBooth_tests.cpp" />
+    <ClCompile Include="DlgCompose_tests.cpp" />
+    <ClCompile Include="DlgConfirm_tests.cpp" />
+    <ClCompile Include="DlgExeConfirm_tests.cpp" />
+    <ClCompile Include="DlgExercise_tests.cpp" />
+    <ClCompile Include="DlgDelRole_tests.cpp" />
+    <ClCompile Include="DlgEnchant_tests.cpp" />
+    <ClCompile Include="DlgDice_tests.cpp" />
+    <ClCompile Include="DlgTalk_tests.cpp" />
+    <ClCompile Include="DlgMpcBooth_tests.cpp" />
+    <ClCompile Include="DlgQuery_Faction_tests.cpp" />
+    <ClCompile Include="DlgLogin_tests.cpp" />
+    <ClCompile Include="DlgQuery_tests.cpp" />
+    <ClCompile Include="DlgMain_tests.cpp" />
+    <ClCompile Include="MyShellDlg_tests.cpp" />
+    <ClCompile Include="BkWnd_tests.cpp" />
+    <ClCompile Include="RC5_321216_tests.cpp" />
+    <ClCompile Include="MD5_tests.cpp" />
+    <ClCompile Include="TxtMsgSet_tests.cpp" />
+    <ClCompile Include="NetStringPacker_bodies_tests.cpp" />
+    <ClCompile Include="Package_bodies_tests.cpp" />
+    <ClCompile Include="TaskDialog_bodies_tests.cpp" />
+    <ClCompile Include="Path_bodies_tests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MyShell\client.vcxproj">
+      <Project>{A1B2C3D4-0005-4000-8000-000000000005}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

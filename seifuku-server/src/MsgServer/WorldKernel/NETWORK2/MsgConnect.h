@@ -1,0 +1,43 @@
+#if !defined(AFX_MSGCONNECT_H__F6692EA5_5D32_4E87_AA3C_4B37A6BE6695__INCLUDED_)
+#define AFX_MSGCONNECT_H__F6692EA5_5D32_4E87_AA3C_4B37A6BE6695__INCLUDED_
+
+#if _MSC_VER > 1000
+#pragma once
+#endif
+
+#include "NetMsg.h"
+
+class CMsgConnect : public world_kernel::CNetMsg
+{
+public:
+	CMsgConnect();
+	virtual ~CMsgConnect();
+
+	BOOL	Create	(OBJID idAccount, DWORD dwData, char* pszInfo);
+
+public:	
+	BOOL			Create		(char* pMsgBuf, DWORD dwSize);
+	void			Process		(void* pSocket);
+
+protected:
+	typedef struct {
+		MSGHEAD_DEFINE
+
+		OBJID			idAccount;
+		DWORD			dwData;
+		union {
+			char		szInfo[_MAX_NAMESIZE];
+			struct {
+				USHORT	usVersion;
+				char	szLanguage[2];
+				char	bufClient[6];
+				USHORT	usReserved12;
+				DWORD	dwResData;
+			};
+		};
+	}MSG_Info;
+
+	MSG_Info*	m_pInfo;
+};
+
+#endif

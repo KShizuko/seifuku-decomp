@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A1B2C3D4-0007-4000-8000-000000000007}</ProjectGuid>
+    <RootNamespace>clientlib</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Debug'">true</UseDebugLibraries>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Release'">false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\props\seifuku.props" />
+  <PropertyGroup>
+    <TargetName>clientlib</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\3DRole;$(ProjectDir)..\3DRole\Network;$(ProjectDir)..\3DGameMap;$(ProjectDir)..\3DBaseCode;$(SeifukuRoot)src\Graphic;$(SeifukuRoot)src\GraphicData;$(SeifukuRoot)src\GameData;$(SeifukuRoot)src\GameInput;$(SeifukuRoot)src\Role3D;$(SeifukuRoot)src\RoleView;$(SeifukuRoot)src\C3_CORE_DLL;$(SeifukuRoot)src\NDSound;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ENGLISH_VERSION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\3DRole\Network\NetMsg.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgAction.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgTalk.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgInteract.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgWalk.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgMapItem.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgName.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgSyndicate.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgNpcInfo.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgNpc.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgItem.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgPackage.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgGemEmbed.cpp" />
+    <ClCompile Include="..\3DRole\MsgDataArray.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgFuse.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgDice.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgFriend.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgTeam.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgBoard.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgTaskDialog.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgFriendInfo.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgTime.cpp" />
+    <ClCompile Include="..\3DRole\MsgPetInfo.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgSynMemberInfo.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgMapInfo.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgNpcInfoEX.cpp" />
+    <ClCompile Include="..\3DRole\MsgItemInfoEx.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgSyndicateAttributeInfo.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgMagicInfo.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgMagicEffect.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgFlushExp.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgTeamAward.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgWeather.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgTeamMember.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgConnect.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgLoginReply.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgAccount.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgWeaponSkill.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgTrade.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgUserAttrib.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgItemInfo.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgPlayer.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgLogin.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgLoginAccountEx.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgAllot.cpp" />
+    <ClCompile Include="..\3DRole\FDword.cpp" />
+    <ClCompile Include="..\3DRole\ZoomNum.cpp" />
+    <ClCompile Include="..\3DRole\FloatingStr.cpp" />
+    <ClCompile Include="..\3DRole\ImgNumCounter.cpp" />
+    <ClCompile Include="..\3DRole\HeroFriend.cpp" />
+    <ClCompile Include="..\3DRole\HeroTeam.cpp" />
+    <ClCompile Include="..\3DRole\ShopData.cpp" />
+    <ClCompile Include="..\3DRole\ItemData.cpp" />
+    <ClCompile Include="..\3DRole\HeroSyndicate.cpp" />
+    <ClCompile Include="..\3DRole\GamePlayerSet.cpp" />
+    <ClCompile Include="..\3DRole\RoleAction.cpp" />
+    <ClCompile Include="..\3DRole\Professional.cpp" />
+    <ClCompile Include="..\3DRole\Bulletin.cpp" />
+    <ClCompile Include="..\3DRole\WeaponSkill.cpp" />
+    <ClCompile Include="..\3DRole\Magic.cpp" />
+    <ClCompile Include="..\3DRole\MagicData.cpp" />
+    <ClCompile Include="..\3DRole\Trade.cpp" />
+    <ClCompile Include="..\3DRole\Dummy.cpp" />
+    <ClCompile Include="..\3DRole\ChatLog.cpp" />
+    <ClCompile Include="..\3DRole\HeroWeaponSkill.cpp" />
+    <ClCompile Include="..\3DRole\HeroItem.cpp" />
+    <ClCompile Include="..\3DRole\Pet.cpp" />
+    <ClCompile Include="..\3DRole\Hero.cpp" />
+    <ClCompile Include="..\3DGameMap\SkyRose.cpp" />
+    <ClCompile Include="..\3DGameMap\Rose.cpp" />
+    <ClCompile Include="..\3DGameMap\PatternRose.cpp" />
+    <ClCompile Include="..\3DRole\3DSimpleRole.cpp" />
+    <ClCompile Include="..\3DBaseCode\Physics.cpp" />
+    <ClCompile Include="..\3DGameMap\3DMapSimpleObj.cpp" />
+    <ClCompile Include="..\3DGameMap\MagicEffectArrow.cpp" />
+    <ClCompile Include="..\3DGameMap\TerrainEffectManager.cpp" />
+    <ClCompile Include="..\3DGameMap\TerrainObjManager.cpp" />
+    <ClCompile Include="..\3DGameMap\MapItemManager.cpp" />
+    <ClCompile Include="..\3DGameMap\2DMapRegion.cpp" />
+    <ClCompile Include="..\3DGameMap\StringInfoView.cpp" />
+    <ClCompile Include="..\3DGameMap\AniInfoView.cpp" />
+    <ClCompile Include="..\3DGameMap\2DMapItem.cpp" />
+    <ClCompile Include="..\3DGameMap\2DMapPuzzleObj.cpp" />
+    <ClCompile Include="..\3DGameMap\MagicEffect.cpp" />
+    <ClCompile Include="..\3DGameMap\SurfaceLayer.cpp" />
+    <ClCompile Include="..\3DGameMap\3DMagicMapItem.cpp" />
+    <ClCompile Include="..\3DGameMap\2DMapSceneObj.cpp" />
+    <ClCompile Include="..\3DGameMap\SceneLayer.cpp" />
+    <ClCompile Include="..\3DGameMap\3DGameMap.cpp" />
+    <ClCompile Include="..\3DGameMap\MapManager.cpp" />
+    <ClCompile Include="..\3DGameMap\MapInfo.cpp" />
+    <ClCompile Include="..\3DBaseCode\AStar.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgUserInfo.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgTick.cpp" />
+    <ClCompile Include="..\3DRole\GameMain.cpp" />
+    <ClCompile Include="MyButton.cpp" />
+    <ClCompile Include="MyCheck.cpp" />
+    <ClCompile Include="FontScale.cpp" />
+    <ClCompile Include="MyScrollButton.cpp" />
+    <ClCompile Include="MyCombo.cpp" />
+    <ClCompile Include="MyEdit.cpp" />
+    <ClCompile Include="MyEditRect.cpp" />
+    <ClCompile Include="MyGrid.cpp" />
+    <ClCompile Include="MyImage.cpp" />
+    <ClCompile Include="MyList.cpp" />
+    <ClCompile Include="MyProgress.cpp" />
+    <ClCompile Include="MySlider.cpp" />
+    <ClCompile Include="MyStatic.cpp" />
+    <ClCompile Include="BaseFunc.cpp" />
+    <ClCompile Include="ServerAdv.cpp" />
+    <ClCompile Include="ServerStatus.cpp" />
+    <ClCompile Include="WebBrowser.cpp" />
+    <ClCompile Include="DlgLogo.cpp" />
+    <ClCompile Include="DlgListBox.cpp" />
+    <ClCompile Include="DlgDiceList.cpp" />
+    <ClCompile Include="DlgPk.cpp" />
+    <ClCompile Include="DlgFacState.cpp" />
+    <ClCompile Include="DlgProIntro.cpp" />
+    <ClCompile Include="DlgHawk.cpp" />
+    <ClCompile Include="DlgOther.cpp" />
+    <ClCompile Include="MenuGroup.cpp" />
+    <ClCompile Include="DlgTitleBar.cpp" />
+    <ClCompile Include="DlgBag.cpp" />
+    <ClCompile Include="MenuTalk.cpp" />
+    <ClCompile Include="DlgTalkAct.cpp" />
+    <ClCompile Include="DlgMsgSend.cpp" />
+    <ClCompile Include="DlgLay.cpp" />
+    <ClCompile Include="DlgHelp.cpp" />
+    <ClCompile Include="DlgBlack.cpp" />
+    <ClCompile Include="DlgInsHelp.cpp" />
+    <ClCompile Include="DlgEnmState.cpp" />
+    <ClCompile Include="DlgFrdState.cpp" />
+    <ClCompile Include="DlgEnemy.cpp" />
+    <ClCompile Include="DlgMpcGoods.cpp" />
+    <ClCompile Include="DlgMsgReceive.cpp" />
+    <ClCompile Include="DlgNpcBuy.cpp" />
+    <ClCompile Include="DlgFriend.cpp" />
+    <ClCompile Include="DlgAct.cpp" />
+    <ClCompile Include="DlgEffigy.cpp" />
+    <ClCompile Include="DlgImprove.cpp" />
+    <ClCompile Include="DlgRoleChoose.cpp" />
+    <ClCompile Include="DlgNpcFace.cpp" />
+    <ClCompile Include="DlgDepot.cpp" />
+    <ClCompile Include="DlgMagic.cpp" />
+    <ClCompile Include="DlgGroup.cpp" />
+    <ClCompile Include="DlgKongfu.cpp" />
+    <ClCompile Include="DlgFuse.cpp" />
+    <ClCompile Include="DlgLevWord.cpp" />
+    <ClCompile Include="DlgEmbed.cpp" />
+    <ClCompile Include="DlgHotkey.cpp" />
+    <ClCompile Include="DlgTrade.cpp" />
+    <ClCompile Include="DlgLog.cpp" />
+    <ClCompile Include="..\3DRole\Network\MsgRegister.cpp" />
+    <ClCompile Include="DlgRoleCreate.cpp" />
+    <ClCompile Include="DlgQuery_Weapon.cpp" />
+    <ClCompile Include="DlgNpcEquip.cpp" />
+    <ClCompile Include="DlgSetup.cpp" />
+    <ClCompile Include="DlgSkill.cpp" />
+    <ClCompile Include="DlgTask.cpp" />
+    <ClCompile Include="DlgXp.cpp" />
+    <ClCompile Include="DlgQuery_Mission.cpp" />
+    <ClCompile Include="DlgQuery_Role.cpp" />
+    <ClCompile Include="DlgQuery_Skill.cpp" />
+    <ClCompile Include="DlgChat.cpp" />
+    <ClCompile Include="DlgNpcBooth.cpp" />
+    <ClCompile Include="DlgCompose.cpp" />
+    <ClCompile Include="DlgConfirm.cpp" />
+    <ClCompile Include="DlgExeConfirm.cpp" />
+    <ClCompile Include="DlgExercise.cpp" />
+    <ClCompile Include="DlgDelRole.cpp" />
+    <ClCompile Include="DlgEnchant.cpp" />
+    <ClCompile Include="DlgDice.cpp" />
+    <ClCompile Include="DlgTalk.cpp" />
+    <ClCompile Include="DlgMpcBooth.cpp" />
+    <ClCompile Include="DlgQuery_Faction.cpp" />
+    <ClCompile Include="DlgLogin.cpp" />
+    <ClCompile Include="DlgQuery.cpp" />
+    <ClCompile Include="DlgMain.cpp" />
+    <ClCompile Include="MyShellDlg.cpp" />
+    <ClCompile Include="BkWnd.cpp" />
+    <ClCompile Include="..\3DRole\RC5_321216.cpp" />
+    <ClCompile Include="..\3DBaseCode\MD5.cpp" />
+    <ClCompile Include="..\3DBaseCode\MyTimer.cpp" />
+    <ClCompile Include="..\3DBaseCode\MyHeap.cpp" />
+    <ClCompile Include="..\3DBaseCode\MyIni.cpp" />
+    <ClCompile Include="..\3DBaseCode\EncryptFile.cpp" />
+    <ClCompile Include="..\3DRole\Bank.cpp" />
+    <ClCompile Include="..\3DRole\Register.cpp" />
+    <ClCompile Include="..\3DRole\Entrance.cpp" />
+    <ClCompile Include="..\3DBaseCode\TxtMsgSet.cpp" />
+    <ClCompile Include="..\3DBaseCode\NetStringPacker.cpp" />
+    <ClCompile Include="..\3DRole\Package.cpp" />
+    <ClCompile Include="..\3DRole\XpCounterDown.cpp" />
+    <ClCompile Include="..\3DRole\TaskDialog.cpp" />
+    <ClCompile Include="..\3DRole\Check.cpp" />
+    <ClCompile Include="..\3DRole\Booth.cpp" />
+    <ClCompile Include="..\3DRole\BoothManager.cpp" />
+    <ClCompile Include="..\3DRole\Shop.cpp" />
+    <ClCompile Include="..\3DRole\Friend.cpp" />
+    <ClCompile Include="..\3DRole\Enemy.cpp" />
+    <ClCompile Include="..\3DRole\ImageString.cpp" />
+    <ClCompile Include="..\3DRole\ImageStringEx.cpp" />
+    <ClCompile Include="..\3DRole\ZoomInImgString.cpp" />
+    <ClCompile Include="..\3DRole\KillCounter.cpp" />
+    <ClCompile Include="..\3DRole\Team.cpp" />
+    <ClCompile Include="..\3DRole\DiceManager.cpp" />
+    <ClCompile Include="..\3DRole\AniEffect.cpp" />
+    <ClCompile Include="..\3DGameMap\MapLayer.cpp" />
+    <ClCompile Include="..\3DGameMap\2DMapObj.cpp" />
+    <ClCompile Include="..\3DGameMap\3DMapObj.cpp" />
+    <ClCompile Include="..\3DGameMap\InfoViewManager.cpp" />
+    <ClCompile Include="..\3DGameMap\MagicEffectManager.cpp" />
+    <ClCompile Include="..\3DGameMap\Path.cpp" />
+    <ClCompile Include="..\3DGameMap\SkyLayer.cpp" />
+    <ClCompile Include="..\3DGameMap\FloorLayer.cpp" />
+    <ClCompile Include="..\3DGameMap\2DMapTerrainObj.cpp" />
+    <ClCompile Include="..\3DGameMap\TerrainLayer.cpp" />
+    <ClCompile Include="..\3DGameMap\TqTerrain.cpp" />
+    <ClCompile Include="..\3DGameMap\3DMapEffect.cpp" />
+    <ClCompile Include="..\3DGameMap\Radar.cpp" />
+    <ClCompile Include="..\3DRole\Item.cpp" />
+    <ClCompile Include="..\3DGameMap\InteractiveLayer.cpp" />
+    <ClCompile Include="..\3DRole\HeroBank.cpp" />
+    <ClCompile Include="..\3DRole\HeroEnemy.cpp" />
+    <ClCompile Include="..\3DRole\HeroPackage.cpp" />
+    <ClCompile Include="..\3DRole\HeroTask.cpp" />
+    <ClCompile Include="..\3DRole\HeroTrade.cpp" />
+    <ClCompile Include="..\3DGameMap\Weather.cpp" />
+    <ClCompile Include="..\3DRole\HeroMagic.cpp" />
+    <ClCompile Include="..\3DRole\Role.cpp" />
+    <ClCompile Include="..\3DRole\Player.cpp" />
+    <ClCompile Include="..\3DRole\GameMsg.cpp" />
+    <ClCompile Include="..\3DRole\EncryptData.cpp" />
+    <ClCompile Include="..\3DGameMap\PuzzleBmp.cpp" />
+    <ClCompile Include="..\3DGameMap\IInfoView.cpp" />
+    <ClCompile Include="..\3DRole\HeroDummy.cpp" />
+    <ClCompile Include="..\3DRole\SayHello.cpp" />
+    <ClCompile Include="..\3DRole\RoleInfo.cpp" />
+    <ClCompile Include="..\3DGameMap\Cloud.cpp" />
+    <ClCompile Include="..\3DGameMap\FireBug.cpp" />
+    <ClCompile Include="..\3DGameMap\AirBubble.cpp" />
+    <ClCompile Include="..\3DGameMap\MapSound.cpp" />
+    <ClCompile Include="..\3DGameMap\2DMapCoverObj.cpp" />
+    <ClCompile Include="..\3DGameMap\Layer.cpp" />
+    <ClCompile Include="..\3DGameMap\2DMapTerrainObjPart.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

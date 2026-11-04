@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A1B2C3D4-000B-4000-8000-00000000000B}</ProjectGuid>
+    <RootNamespace>graphic_tests</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectSubType>NativeUnitTestProject</ProjectSubType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Debug'">true</UseDebugLibraries>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Release'">false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\props\seifuku.props" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(VCInstallDir)Auxiliary\VS\UnitTest\include;$(SeifukuRoot)src\Graphic;$(SeifukuRoot)src\3DBaseCode;$(SeifukuRoot)src\C3_CORE_DLL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <UseFullPaths>true</UseFullPaths>
+      <RuntimeLibrary Condition="'$(Configuration)'=='Debug'">MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(Configuration)'=='Release'">MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(VCInstallDir)Auxiliary\VS\UnitTest\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SeifukuRoot)bin\$(Configuration)\graphic.lib;$(SeifukuRoot)obj\graphic\$(Configuration)\AlphaMask.obj;$(SeifukuRoot)bin\$(Configuration)\C3_CORE_DLL.lib;$(SeifukuRoot)obj\graphic\$(Configuration)\BaseFunc.obj;$(SeifukuRoot)obj\graphic\$(Configuration)\MyHeap.obj;d3d9.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="3DAniObj_tests.cpp" />
+    <ClCompile Include="3DEffect_tests.cpp" />
+    <ClCompile Include="AlphaMask_tests.cpp" />
+    <ClCompile Include="Ani_tests.cpp" />
+    <ClCompile Include="BaseFunc_tests.cpp" />
+    <ClCompile Include="MyHeap_tests.cpp" />
+    <ClCompile Include="ND_Bitmap_tests.cpp" />
+    <ClCompile Include="ND_Bitmap_mesh_tests.cpp" />
+    <ClCompile Include="ND_Bitmap_multi_tests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Graphic\graphic.vcxproj">
+      <Project>{A1B2C3D4-000A-4000-8000-00000000000A}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

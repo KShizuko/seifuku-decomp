@@ -1,0 +1,70 @@
+#if !defined(AFX_MSGITEM_H__9AB1BCEA_F6D1_4413_A39D_8AC35C9FF655__INCLUDED_)
+#define AFX_MSGITEM_H__9AB1BCEA_F6D1_4413_A39D_8AC35C9FF655__INCLUDED_
+
+#if _MSC_VER > 1000
+#pragma once
+#endif
+
+#include "NetMsg.h"
+
+enum {	ITEMACT_NONE=0, 
+		ITEMACT_BUY,
+		ITEMACT_SELL,
+		ITEMACT_DROP,
+		ITEMACT_USE,
+		ITEMACT_EQUIP,
+		ITEMACT_UNEQUIP,
+		ITEMACT_SPLITITEM,
+		ITEMACT_COMBINEITEM,
+		ITEMACT_QUERYMONEYSAVED,
+		ITEMACT_SAVEMONEY,
+		ITEMACT_DRAWMONEY,
+		ITEMACT_DROPMONEY,
+		ITEMACT_SPENDMONEY,
+		ITEMACT_REPAIR,
+		ITEMACT_REPAIRALL,
+		ITEMACT_IDENT,
+		ITEMACT_DURABILITY,
+		ITEMACT_DROPEQUIPMENT,
+		ITEMACT_IMPROVE,
+		ITEMACT_UPLEV,
+		ITEMACT_BOOTH_QUERY,
+		ITEMACT_BOOTH_ADD,
+		ITEMACT_BOOTH_DEL,
+		ITEMACT_BOOTH_BUY,
+		ITEMACT_SYNCHRO_AMOUNT,
+		ITEMACT_FIREWORKS,
+};
+
+class CMsgItem : public CNetMsg  
+{
+public:
+	CMsgItem();
+	virtual ~CMsgItem();
+
+	BOOL	Create	(OBJID id, int nAction, int nPosition = ITEMPOSITION_NONE);
+
+public:	
+	BOOL	Create		(char* pMsgBuf, DWORD dwSize);
+	void	Process		(void* pInfo);
+
+protected:
+	typedef struct {
+		MSGHEAD_DEFINE
+
+		OBJID		id;
+		union {
+			DWORD		dwData;
+			struct {
+				USHORT	usPosY;
+				USHORT	usPosX;
+			};
+		};
+		USHORT		usAction;
+		DWORD		dwReserved0C;
+	}MSG_Info;
+
+	MSG_Info*	m_pInfo;
+};
+
+#endif

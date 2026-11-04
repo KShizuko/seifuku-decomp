@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32"><Configuration>Debug</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32"><Configuration>Release</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4A305C1D-B850-4F0A-909C-6F9FBB2234CE}</ProjectGuid>
+    <RootNamespace>NpcServer</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\props\seifuku-server.props" />
+  <Import Project="..\..\props\seifuku-connector.props" />
+  <ItemDefinitionGroup>
+    <ClCompile><AdditionalIncludeDirectories>.;..\Common;..\Comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ClCompile>
+    <Link><SubSystem>Windows</SubSystem><AdditionalDependencies>ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies></Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ClientSocket.cpp" />
+    <ClCompile Include="KernelThread.cpp" />
+    <ClCompile Include="NpcServer.cpp" />
+    <ClCompile Include="NpcServerDlg.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ClientSocket.h" />
+    <ClInclude Include="EncryptClient.h" />
+    <ClInclude Include="I_Shell.h" />
+    <ClInclude Include="KernelThread.h" />
+    <ClInclude Include="NpcServer.h" />
+    <ClInclude Include="NpcServerDlg.h" />
+    <ClInclude Include="P_ServerManager.h" />
+    <ClInclude Include="protocol.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="typedef.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="NpcServer.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\NpcServer.ico" />
+    <None Include="res\NpcServer.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AiModule\AiModule.vcxproj"><Project>{F31467EB-5C86-4203-8546-AA200CD6B3E7}</Project></ProjectReference>
+    <ProjectReference Include="..\Comm\Comm.vcxproj"><Project>{048F0843-ADFD-4D27-B63D-8367D633F4BC}</Project></ProjectReference>
+    <ProjectReference Include="..\Common\Common.vcxproj"><Project>{042AD06E-54F5-474D-8522-107DFAFBDDC3}</Project></ProjectReference>
+    <ProjectReference Include="..\GameBaseCodeMT\GameBaseCodeMT.vcxproj"><Project>{37DDF34C-09C5-4E48-ACC2-7B3B15F91C5C}</Project></ProjectReference>
+    <ProjectReference Include="..\MapData\MapData.vcxproj"><Project>{A576C1FA-23E3-4864-96D8-D2CC8896AEFC}</Project></ProjectReference>
+    <ProjectReference Include="NpcKernel\NpcKernel.vcxproj"><Project>{E53312B7-D2B0-4EE5-B69B-F3EC069E6E70}</Project></ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

@@ -1,0 +1,13 @@
+[Header]
+GroupAmount=1
+Group1=GroupPic3
+
+[Group1]
+ServerAmount=1
+
+Server1=Seifuku
+Ip1=127.000.000.001
+Port1=9958
+ServerName1=Seifuku
+HintWord1=
+Pic1=servericon11

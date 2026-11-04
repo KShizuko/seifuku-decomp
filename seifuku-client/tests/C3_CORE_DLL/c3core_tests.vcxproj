@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A1B2C3D4-0004-4000-8000-000000000004}</ProjectGuid>
+    <RootNamespace>c3core_tests</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectSubType>NativeUnitTestProject</ProjectSubType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Debug'">true</UseDebugLibraries>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Release'">false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\props\seifuku.props" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(VCInstallDir)Auxiliary\VS\UnitTest\include;$(SeifukuRoot)src\C3_CORE_DLL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary Condition="'$(Configuration)'=='Debug'">MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(Configuration)'=='Release'">MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>true</UseFullPaths>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(VCInstallDir)Auxiliary\VS\UnitTest\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SeifukuRoot)obj\c3core\$(Configuration)\d3dx8compat.obj;$(SeifukuRoot)obj\c3core\$(Configuration)\seifuku_jpegenc.obj;d3d9.lib;winmm.lib;windowscodecs.lib;ole32.lib;uuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="d3dx8compat_tests.cpp" />
+    <ClCompile Include="d3dx8compat_device_tests.cpp" />
+    <ClCompile Include="c3_common_tests.cpp" />
+    <ClCompile Include="c3_main_tests.cpp" />
+    <ClCompile Include="c3_main_device_tests.cpp" />
+    <ClCompile Include="c3_texture_tests.cpp" />
+    <ClCompile Include="c3_camera_tests.cpp" />
+    <ClCompile Include="c3_omni_tests.cpp" />
+    <ClCompile Include="c3_point_tests.cpp" />
+    <ClCompile Include="c3_datafile_tests.cpp" />
+    <ClCompile Include="c3_key_tests.cpp" />
+    <ClCompile Include="c3_font_tests.cpp" />
+    <ClCompile Include="c3_scene_tests.cpp" />
+    <ClCompile Include="c3_sprite_tests.cpp" />
+    <ClCompile Include="c3_phy_tests.cpp" />
+    <ClCompile Include="c3_shape_tests.cpp" />
+    <ClCompile Include="c3_ptcl_tests.cpp" />
+    <ClCompile Include="c3_capscreen_tests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\C3_CORE_DLL\c3core.vcxproj">
+      <Project>{A1B2C3D4-0003-4000-8000-000000000003}</Project>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

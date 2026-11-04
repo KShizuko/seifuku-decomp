@@ -1,0 +1,8 @@
+gdani.wdf
+gdani/
+ani/
+gdmesh.wdf
+gdmesh/
+ini/*.bin
+debug.log
+build/

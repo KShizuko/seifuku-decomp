@@ -1,0 +1,6 @@
+LIBRARY C3_CORE_DLL
+EXPORTS
+    ?g_D3D@@3PAUIDirect3D8@@A=?g_D3D@@3PAUIDirect3D9@@A DATA
+    ?g_D3DDevice@@3PAUIDirect3DDevice8@@A=?g_D3DDevice@@3PAUIDirect3DDevice9@@A DATA
+    ?g_D3DCaps@@3U_D3DCAPS8@@A=?g_D3DCaps@@3U_D3DCAPS9@@A DATA
+    ?g_Viewport@@3U_D3DVIEWPORT8@@A=?g_Viewport@@3U_D3DVIEWPORT9@@A DATA

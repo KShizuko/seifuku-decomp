@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32"><Configuration>Debug</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32"><Configuration>Release</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{562FB8A1-690A-4FBE-85BA-762DF1EACC08}</ProjectGuid>
+    <RootNamespace>msgserver_tests</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\props\seifuku-server.props" />
+  <ItemDefinitionGroup>
+    <ClCompile><AdditionalIncludeDirectories>$(VCInstallDir)Auxiliary\VS\UnitTest\include;..\..\src\MsgServer\Adapter\Include;..\..\src\MsgServer\Adapter\Src;..\..\src\MsgServer\share;..\..\src\MsgServer\ServerSocket;..\..\src\MsgServer\WorldKernel\NETWORK2;..\..\src\MsgServer\WorldKernel;..\..\src\Common;..\..\src\GameBaseCodeMT;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ClCompile>
+    <Link><AdditionalLibraryDirectories>$(VCInstallDir)Auxiliary\VS\UnitTest\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories><AdditionalDependencies>winmm.lib;$(SeifukuRoot)obj\Lottery\$(Configuration)\ConfigMgr.obj;$(SeifukuRoot)obj\Lottery\$(Configuration)\Lottery.obj;%(AdditionalDependencies)</AdditionalDependencies></Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="header_tests.cpp" />
+    <ClCompile Include="cipher_tests.cpp" />
+    <ClCompile Include="login_msg_tests.cpp" />
+    <ClCompile Include="account_link_tests.cpp" />
+    <ClCompile Include="account_msg_tests.cpp" />
+    <ClCompile Include="messageboard_tests.cpp" />
+    <ClCompile Include="syndicate_tests.cpp" />
+    <ClCompile Include="world_msg_tests.cpp" />
+    <ClCompile Include="mapgroup_netmsg_tests.cpp" />
+    <ClCompile Include="mapgroup_role_tests.cpp" />
+    <ClCompile Include="mapgroup_crole_tests.cpp" />
+    <ClCompile Include="mapgroup_templates_tests.cpp" />
+    <ClCompile Include="mapgroup_gameobj_tests.cpp" />
+    <ClCompile Include="mapgroup_userdata_tests.cpp" />
+    <ClCompile Include="mapgroup_eventpack_tests.cpp" />
+    <ClCompile Include="mapgroup_lottery_tests.cpp" />
+    <ClCompile Include="mapgroup_team_tests.cpp" />
+    <ClCompile Include="mapgroup_friend_tests.cpp" />
+    <ClCompile Include="mapgroup_enemy_tests.cpp" />
+    <ClCompile Include="mapgroup_weaponskill_tests.cpp" />
+    <ClCompile Include="mapgroup_status_tests.cpp" />
+    <ClCompile Include="mapgroup_userinfo_tests.cpp" />
+    <ClCompile Include="mapgroup_player_tests.cpp" />
+    <ClCompile Include="mapgroup_msgfuse_tests.cpp" />
+    <ClCompile Include="mapgroup_msgfriend_tests.cpp" />
+    <ClCompile Include="mapgroup_msgtick_tests.cpp" />
+    <ClCompile Include="mapgroup_msgteamaward_tests.cpp" />
+    <ClCompile Include="mapgroup_msgmapitem_tests.cpp" />
+    <ClCompile Include="mapgroup_msgpackage_tests.cpp" />
+    <ClCompile Include="mapgroup_msgmagiceffect_tests.cpp" />
+    <ClCompile Include="mapgroup_msgiteminfo_tests.cpp" />
+    <ClCompile Include="mapgroup_msgiteminfoex_tests.cpp"><AdditionalIncludeDirectories>..\..\src\MsgServer\MapGroupKernel;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ClCompile>
+    <ClCompile Include="mapgroup_msguserattrib_tests.cpp"><AdditionalIncludeDirectories>..\..\src\MsgServer\MapGroupKernel;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ClCompile>
+    <ClCompile Include="mapgroup_msgitem_tests.cpp" />
+    <ClCompile Include="mapgroup_action_tests.cpp" />
+    <ClCompile Include="mapgroup_weather_tests.cpp" />
+    <ClCompile Include="mapgroup_analyser_tests.cpp" />
+    <ClCompile Include="mapgroup_gameblock_tests.cpp" />
+    <ClCompile Include="mapgroup_tradebuddy_tests.cpp" />
+    <ClCompile Include="mapgroup_item_tests.cpp" />
+    <ClCompile Include="mapgroup_usertable_tests.cpp" />
+    <ClCompile Include="mapgroup_magic_tests.cpp" />
+    <ClCompile Include="mapgroup_wanted_tests.cpp" />
+    <ClCompile Include="mapgroup_gmtoolcfg_tests.cpp" />
+    <ClCompile Include="mapgroup_deadloop_tests.cpp" />
+    <ClCompile Include="mapgroup_maptrap_tests.cpp"><AdditionalIncludeDirectories>..\..\src\MsgServer\MapGroupKernel;..\..\src\MapData;..\..\src\Comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ClCompile>
+    <ClCompile Include="shell_shims.cpp" />
+    <ClCompile Include="adapter_tests.cpp" />
+    <ClCompile Include="lotterydll_tests.cpp"><AdditionalIncludeDirectories>..\..\src\MsgServer\Lottery\Src;..\..\src\MsgServer\Adapter\Include;..\..\src\MsgServer\share;..\..\src\Common;..\..\src\GameBaseCodeMT;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ClCompile>
+    <ClCompile Include="adapter_init_tests.cpp"><AdditionalIncludeDirectories>..\..\src\MsgServer\Adapter\Include;..\..\src\MsgServer\Adapter\Src;..\..\src\MsgServer\MapGroupKernel;..\..\src\MsgServer\MapGroupKernel\Network;..\..\src\MsgServer\share;..\..\src\MsgServer\ServerSocket;..\..\src\Common;..\..\src\Comm;..\..\src\GameBaseCodeMT;..\..\src\MapData;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories><PreprocessorDefinitions>MAPGROUP_KERNEL;%(PreprocessorDefinitions)</PreprocessorDefinitions></ClCompile>
+    <ClCompile Include="layout_mapgroup.cpp"><AdditionalIncludeDirectories>..\..\src\MsgServer\Lottery\Src;..\..\src\MsgServer\Adapter\Include;..\..\src\MsgServer\Adapter\Src;..\..\src\MsgServer\MapGroupKernel;..\..\src\MsgServer\MapGroupKernel\Network;..\..\src\MsgServer\share;..\..\src\MsgServer\ServerSocket;..\..\src\Common;..\..\src\Comm;..\..\src\GameBaseCodeMT;..\..\src\MapData;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories><PreprocessorDefinitions>MAPGROUP_KERNEL;%(PreprocessorDefinitions)</PreprocessorDefinitions></ClCompile>
+    <ClCompile Include="layout_world.cpp"><AdditionalIncludeDirectories>..\..\src\MsgServer\WorldKernel;..\..\src\MsgServer\WorldKernel\NETWORK2;..\..\src\MsgServer\share;..\..\src\MsgServer\ServerSocket;..\..\src\Common;..\..\src\Comm;..\..\src\GameBaseCodeMT;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ClCompile>
+    <ClCompile Include="layout_socket.cpp"><AdditionalIncludeDirectories>..\..\src\MsgServer\ServerSocket;..\..\src\MsgServer\share;..\..\src\Common;..\..\src\Comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ClCompile>
+    <ClCompile Include="layout_gamebasecode.cpp"><AdditionalIncludeDirectories>..\..\src\GameBaseCodeMT;..\..\src\GameBaseCodeMT\source;..\..\src\Common;..\..\vendor\mariadb-connector-c-3.3.19-src\include;..\..\vendor\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories><PreprocessorDefinitions>MULTITHREAD_SAFE;NO_MUTEX;USE_NEW;%(PreprocessorDefinitions)</PreprocessorDefinitions></ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Common\Common.vcxproj"><Project>{042AD06E-54F5-474D-8522-107DFAFBDDC3}</Project></ProjectReference>
+    <ProjectReference Include="..\..\src\MsgServer\WorldKernel\WorldKernel.vcxproj"><Project>{CB3CDB20-DA3F-43F2-BF85-FE0E99FBD727}</Project></ProjectReference>
+    <ProjectReference Include="..\..\src\MsgServer\MapGroupKernel\MapGroupKernel.vcxproj"><Project>{0A71A22D-245C-44EF-A398-DE50C6F82AFC}</Project></ProjectReference>
+    <ProjectReference Include="..\..\src\MsgServer\ServerSocket\ServerSocket.vcxproj"><Project>{C778369F-F1F7-4CC4-B0A7-87515237E98C}</Project></ProjectReference>
+    <ProjectReference Include="..\..\src\MsgServer\Lottery\Lottery.vcxproj"><Project>{B2E5C0A4-7F31-4D8E-9A62-3C4F18D07E95}</Project><LinkLibraryDependencies>false</LinkLibraryDependencies><ReferenceOutputAssembly>false</ReferenceOutputAssembly></ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="userlist_tests.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

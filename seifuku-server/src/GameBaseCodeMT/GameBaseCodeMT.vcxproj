@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32"><Configuration>Debug</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32"><Configuration>Release</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{37DDF34C-09C5-4E48-ACC2-7B3B15F91C5C}</ProjectGuid>
+    <RootNamespace>GameBaseCodeMT</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\props\seifuku-server.props" />
+  <Import Project="..\..\props\seifuku-connector.props" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;source;..\Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>MULTITHREAD_SAFE;NO_MUTEX;USE_NEW;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="source\mydatabase.cpp" />
+    <ClCompile Include="source\myrecordset.cpp" />
+    <ClCompile Include="source\MyRecord.cpp" />
+    <ClCompile Include="source\MyConstRecord.cpp" />
+    <ClCompile Include="source\MyField.cpp" />
+    <ClCompile Include="source\MyThread.cpp" />
+    <ClInclude Include="source\MyThread.h" />
+    <ClInclude Include="I_mydb.h" />
+    <ClInclude Include="GameData.h" />
+    <ClInclude Include="ConstGameData.h" />
+    <ClInclude Include="source\Mydb.h" />
+    <ClInclude Include="source\mydatabase.h" />
+    <ClInclude Include="source\myrecordset.h" />
+    <ClInclude Include="source\myrecord.h" />
+    <ClInclude Include="source\myConstrecord.h" />
+    <ClInclude Include="source\MyField.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
